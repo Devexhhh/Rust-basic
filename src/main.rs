@@ -1,3 +1,5 @@
+use std::fs;
+
 struct  Rect {
     height: f32,
     width: f32
@@ -41,6 +43,13 @@ fn main() {
 
     let direction = Direction::East;
     steer(direction);
+
+    let contents = fs::read_to_string("a.txt");
+
+    match contents {
+        Ok(contents) => println!("{}", contents),
+        Err(e) => println!("Error while reading file")
+    }
     // get_length(str); // moved the value, so OWNERSHIP is with get_length
 }
 
