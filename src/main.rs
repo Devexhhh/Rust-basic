@@ -13,6 +13,10 @@ impl Rect {
     }
 }
 
+enum Direction {
+    North, South, East, West
+}
+
 fn main() {
     let mut s1 = String::from("Devex");
     let s2 = &mut s1;
@@ -33,7 +37,19 @@ fn main() {
     println!("{}, {}", r.height, r.width);
     println!("{}", r.area());
     Rect::print_something();
+
+
+    let direction = Direction::East;
+    steer(direction);
     // get_length(str); // moved the value, so OWNERSHIP is with get_length
+}
+
+fn steer(dir: Direction) {
+    match dir {
+        Direction::North => print!("North Direction\n"),
+        Direction::South => print!("SouthDirection\n"),
+        _ => println!("Horizontal Direction")
+    }
 }
 
 fn get_length(str: String) -> usize {
