@@ -1,6 +1,9 @@
-use chrono::prelude::*;
+// use chrono::prelude::*;
+use chrono::{Utc, Local};
 
 fn main() {
-    let utc: DateTime<Utc> = Utc::now();
+    let utc = Utc::now();
+    let local_time = Local::now();
     print!("{}", utc);
+    print!("{}", local_time);
 }
