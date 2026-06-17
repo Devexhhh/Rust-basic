@@ -15,6 +15,13 @@ impl<T: std::ops::Mul<Output = T> + Copy> Rect<T> {
     }
 }
 
+trait Shape {
+    fn area(&self) -> u32;
+}
+
+fn get_area<T: Shape>(s: T) -> u32 {
+    return s.area();
+}
 fn main() {
     dotenv().ok();
 
